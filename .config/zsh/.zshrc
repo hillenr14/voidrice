@@ -1,5 +1,3 @@
-# Luke's config for the Zoomer Shell
-
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
@@ -77,5 +75,25 @@ bindkey '^[[P' delete-char
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+DEFAULT_USER="hillenr"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time vi_mode)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
+POWERLEVEL9K_CONTEXT_TEMPLATE="%m"
+POWERLEVEL9K_VI_INSERT_MODE_STRING=''
+POWERLEVEL9K_VI_COMMAND_MODE_STRING='N'
+POWERLEVEL9K_CONTEXT_BACKGROUND='lightgoldenrod1'
+POWERLEVEL9K_CONTEXT_FOREGROUND='black'
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='silver'
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='black'
+POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='darkred'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='lightgoldenrod2'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='lightgoldenrod2'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='lightgoldenrod2'
+POWERLEVEL9K_DIR_ETC_BACKGROUND='lightgoldenrod2'
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh 2>/dev/null
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
